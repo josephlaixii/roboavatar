@@ -1,0 +1,212 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #F0F0F0;
+  padding: 70px;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+@media only screen and (max-width: 900px) {
+  body { padding: 50px; }
+}
+
+@media only screen and (max-width: 768px) {
+  /* For desktop: */
+  body { padding: 30px; }
+}
+
+@media only screen and (max-width: 645px) {
+  /* For tablets: */
+  body { padding: 15px; }
+}
+
+.container {
+  margin: auto;
+  background-color: #FFF;
+  width: 60%;
+  border-radius: 10px; 
+  box-shadow: 0 1px 5px rgba(0, 0, 0, .2);
+  overflow-y: auto;
+  max-height: 80vh;
+}
+::-webkit-scrollbar {
+  width: 0px;  /* remove scrollbar space */
+  background: transparent;  /* make scrollbar invisible */
+}
+
+.box-students:not(:last-child) {
+  border-bottom: solid 1px #F0F0F0;
+}
+
+.box-student {
+  padding: 20px;
+  /* width: 95.5%; */
+  display: grid;
+  grid-template-areas: "pic info more-info";
+  grid-template-columns: .2fr 1fr .05fr;
+}
+
+.img-student {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 1px solid #CCC;
+  margin-right: 20px;
+  align-self: flex-start;
+}
+
+.pic-student {
+  grid-area: pic;
+}
+
+.info-student {
+  grid-area: info;
+}
+
+.info-name-student {
+  text-transform: uppercase;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 30px;
+  margin: 0;
+  margin-bottom: 30px;
+}
+
+.info-text-student, .grades {
+  margin-left: 20px;
+  color: rgb(143, 143, 143);
+  line-height: 5px;
+}
+
+.input-search {
+  padding: 10px;
+  border: 1px solid #FFF;
+  border-bottom: 1px solid rgb(204, 204, 204);
+  width: 93.5%;
+  outline: none;
+  font-size: 16px;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: rgb(143, 143, 143);
+}
+::-webkit-input-placeholder {
+  color: rgb(143, 143, 143);
+}
+::-ms-input-placeholder {
+  color: rgb(143, 143, 143);
+}
+::placeholder {
+  color: rgb(143, 143, 143);
+}
+
+.input-search:hover, .input-add-tag:hover {
+  border-bottom: 1px solid rgb(83, 83, 83);
+}
+
+.input-add-tag {
+  padding: 10px;
+  border: 1px solid #FFF;
+  border-bottom: 1px solid rgb(204, 204, 204);
+  width: 200px;
+  outline: none;
+  font-size: 16px;
+  margin-left: 20px;
+  color: rgb(143, 143, 143);
+}
+::-webkit-input-placeholder {
+  color: rgb(143, 143, 143);
+}
+::-ms-input-placeholder {
+  color: rgb(143, 143, 143);
+}
+::placeholder {
+  color: rgb(143, 143, 143);
+}
+
+.more-info-student {
+  grid-area: more-info;
+  justify-self: end;
+  vertical-align: top;
+}
+
+.button-toogle {
+  font-size: 40px;
+  font-weight: 800;
+  color: #999;
+  border: none;
+  outline: none;
+  background-color: #FFF;
+  padding: 0;
+  margin: 0;
+  /* line-height: 0; */
+}
+
+.more-info-text-student {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.tag {
+  border-radius: 5px;
+  padding: 10px;
+  margin: 5px;
+  background-color:  #F0F0F0;
+  color: #999;
+}
+
+.tag:first-child{
+  margin-left: 20px;
+}
+
+.tags-box {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 900px) {
+  /* For desktop: */
+  .container { width: 80%; }
+  .box-student { padding: 10px; }
+  .info-name-student { font-size: 35px; }
+}
+
+@media only screen and (max-width: 768px) {
+  /* For desktop: */
+  .container { width: 90%; }
+  .box-student { padding: 5px; }
+  .info-name-student { font-size: 30px; }
+  .button-toogle { font-size: 30px; }
+}
+
+@media only screen and (max-width: 645px) {
+  /* For tablets: */
+  .container { width: 95%; }
+  .box-student { padding: 5px; }
+  .info-name-student { font-size: 20px; }
+  .input-search { width: 92%; }
+}
+
+@media only screen and (max-width: 500px) {
+  /* For phones: */
+  .box-student {
+    padding: 15px;
+    grid-template-areas: "pic pic" 
+                         "info more-info";
+    grid-template-rows: repeat(2, -webkit-min-content);
+    grid-template-rows: repeat(2, min-content);
+    grid-template-columns: 1fr .05fr;
+  }
+  .pic-student { text-align: center; }
+  .info-name-student { text-align: center; }
+  .container { max-height: 90vh; }
+  .input-search { width: 90%; }
+}
